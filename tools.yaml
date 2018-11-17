@@ -1,0 +1,30 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine-tools
+  labels:
+    app: alpine-tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alpine-tools
+  template:
+    metadata:
+      labels:
+        app: alpine-tools
+    spec:
+      containers:
+      - name: alpine-tools
+        image: gitdock.mascorp.com:4567/devops/builders/alpine:latest
+                repo/image:version 
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "32M"
+          limits:
+            cpu: "200m"
+            memory: "64M"
+        ports:
+        - containerPort: 80

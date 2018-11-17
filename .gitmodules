@@ -1,0 +1,3 @@
+[submodule "system/vim-sensible"]
+	path = system/vim-sensible
+	url = https://github.com/tpope/vim-sensible
